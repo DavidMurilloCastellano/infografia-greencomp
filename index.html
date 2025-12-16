@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenComp: Infografía del Marco Europeo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0fdf4; /* Light green background */
+            background-image: radial-gradient(#dcfce7 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .hand-font {
+            font-family: 'Amatic SC', cursive;
+        }
+
+        .card-shadow {
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.15);
+        }
+
+        /* Metaphor Icons Backgrounds */
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .honeycomb {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #88c0d0;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5e81ac;
+        }
+
+        .connector-line {
+            border-left: 4px dashed #cbd5e1;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="text-slate-700 min-h-screen p-4 md:p-8">
+
+    <!-- Main Container (The Canvas) -->
+    <main class="max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-emerald-100 relative">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-emerald-600 text-white p-8 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <i class="fas fa-leaf text-9xl absolute -top-10 -left-10 transform rotate-45"></i>
+                <i class="fas fa-globe-europe text-9xl absolute -bottom-10 -right-10"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <span class="bg-emerald-800 text-emerald-100 px-3 py-1 rounded-full text-sm font-bold tracking-wide uppercase mb-2 inline-block">Marco Europeo</span>
+                <h1 class="text-6xl md:text-8xl hand-font font-bold mb-2">GreenComp 🌿</h1>
+                <p class="text-xl md:text-2xl font-light opacity-90 max-w-3xl mx-auto">Competencias europeas para fomentar una mentalidad de sostenibilidad y actuar por el planeta.</p>
+            </div>
+        </header>
+
+        <!-- INTRO CONCEPTS ROW -->
+        <section class="p-8 grid grid-cols-1 md:grid-cols-3 gap-6 bg-emerald-50 border-b-4 border-emerald-100">
+            <!-- Concept 1 -->
+            <div class="bg-white p-6 rounded-2xl border-l-8 border-blue-500 card-shadow">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-map-marked-alt text-3xl text-blue-500 mr-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">¿Qué es?</h3>
+                </div>
+                <p class="leading-relaxed">El estándar de referencia de la UE para el aprendizaje sobre sostenibilidad en todas las edades.</p>
+            </div>
+            <!-- Concept 2 -->
+            <div class="bg-white p-6 rounded-2xl border-l-8 border-red-500 card-shadow">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-heart-pulse text-3xl text-red-500 mr-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">El Objetivo</h3>
+                </div>
+                <p class="leading-relaxed">Desarrollar conocimientos, capacidades y actitudes para pensar y actuar con empatía.</p>
+            </div>
+            <!-- Concept 3 -->
+            <div class="bg-white p-6 rounded-2xl border-l-8 border-green-500 card-shadow">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-balance-scale text-3xl text-green-500 mr-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">Sostenibilidad</h3>
+                </div>
+                <p class="leading-relaxed">Priorizar las necesidades de todas las formas de vida sin superar los <span class="font-bold">límites planetarios</span>.</p>
+            </div>
+        </section>
+
+        <!-- THE METAPHOR BANNER -->
+        <section class="bg-amber-50 py-6 px-8 flex flex-col items-center justify-center text-center border-b border-amber-200">
+            <h2 class="text-3xl hand-font font-bold text-amber-800 mb-4">La Metáfora del Ecosistema 🐝</h2>
+            <div class="flex flex-wrap justify-center gap-8 text-sm font-bold text-amber-900">
+                <span class="flex items-center"><i class="fas fa-cube text-amber-600 mr-2 text-xl"></i> La Colmena (Valores)</span>
+                <span class="flex items-center"><i class="fas fa-project-diagram text-teal-600 mr-2 text-xl"></i> Néctar/Polen (Complejidad)</span>
+                <span class="flex items-center"><i class="fas fa-seedling text-rose-600 mr-2 text-xl"></i> Flores (Futuros)</span>
+                <span class="flex items-center"><i class="fas fa-bug text-yellow-600 mr-2 text-xl"></i> Abejas (Acción)</span>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT: THE 4 AREAS -->
+        <div class="p-8 relative">
+            <div class="hidden md:block connector-line"></div>
+
+            <!-- AREA 1: VALORES (Left) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 relative z-10">
+                <div class="flex flex-col items-end md:text-right">
+                    <div class="bg-amber-100 text-amber-800 p-4 rounded-full inline-block mb-4 shadow-lg">
+                        <i class="fas fa-layer-group text-3xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-amber-800 mb-2">1. Encarnar Valores</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-md">La Colmena: Ética, equidad y respeto.</p>
+                    
+                    <!-- Competences List -->
+                    <div class="space-y-4 w-full max-w-lg">
+                        <div class="bg-amber-50 p-4 rounded-xl border-r-4 border-amber-400 card-shadow group">
+                            <h4 class="font-bold text-amber-900 group-hover:text-amber-600 transition-colors"><i class="fas fa-search-heart mr-2"></i>Apreciación de la Sostenibilidad</h4>
+                            <p class="text-sm">Reflexionar sobre nuestros valores y si están alineados con el planeta.</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-xl border-r-4 border-amber-400 card-shadow group">
+                            <h4 class="font-bold text-amber-900 group-hover:text-amber-600 transition-colors"><i class="fas fa-hands-helping mr-2"></i>Respaldo a la Ecuanimidad</h4>
+                            <p class="text-sm">Justicia y equidad para generaciones actuales y futuras.</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-xl border-r-4 border-amber-400 card-shadow group">
+                            <h4 class="font-bold text-amber-900 group-hover:text-amber-600 transition-colors"><i class="fas fa-tree mr-2"></i>Promoción de la Naturaleza</h4>
+                            <p class="text-sm">Reconocer que somos naturaleza, no dueños de ella.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spacer for grid layout visual -->
+                <div class="hidden md:flex items-center justify-start opacity-20">
+                    <i class="fas fa-cube text-9xl text-amber-300 transform -rotate-12"></i>
+                </div>
+            </div>
+
+            <!-- AREA 2: COMPLEJIDAD (Right) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 relative z-10">
+                <div class="hidden md:flex items-center justify-end opacity-20">
+                     <i class="fas fa-network-wired text-9xl text-teal-300 transform rotate-12"></i>
+                </div>
+
+                <div class="flex flex-col items-start text-left">
+                    <div class="bg-teal-100 text-teal-800 p-4 rounded-full inline-block mb-4 shadow-lg">
+                        <i class="fas fa-brain text-3xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-teal-800 mb-2">2. Asumir la Complejidad</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-md">Néctar y Polen: Entender sistemas interconectados.</p>
+                    
+                    <!-- Competences List -->
+                    <div class="space-y-4 w-full max-w-lg">
+                        <div class="bg-teal-50 p-4 rounded-xl border-l-4 border-teal-400 card-shadow group">
+                            <h4 class="font-bold text-teal-900 group-hover:text-teal-600 transition-colors"><i class="fas fa-project-diagram mr-2"></i>Pensamiento Sistémico</h4>
+                            <p class="text-sm">Ver el "todo" y las conexiones, no solo las partes aisladas.</p>
+                        </div>
+                        <div class="bg-teal-50 p-4 rounded-xl border-l-4 border-teal-400 card-shadow group">
+                            <h4 class="font-bold text-teal-900 group-hover:text-teal-600 transition-colors"><i class="fas fa-microscope mr-2"></i>Pensamiento Crítico</h4>
+                            <p class="text-sm">Cuestionar el statu quo y detectar el "blanqueo ecológico".</p>
+                        </div>
+                        <div class="bg-teal-50 p-4 rounded-xl border-l-4 border-teal-400 card-shadow group">
+                            <h4 class="font-bold text-teal-900 group-hover:text-teal-600 transition-colors"><i class="fas fa-puzzle-piece mr-2"></i>Contextualización</h4>
+                            <p class="text-sm">Definir los desafíos (sencillos o complejos) para buscar soluciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AREA 3: FUTUROS (Left) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 relative z-10">
+                <div class="flex flex-col items-end md:text-right">
+                    <div class="bg-rose-100 text-rose-800 p-4 rounded-full inline-block mb-4 shadow-lg">
+                        <i class="fas fa-eye text-3xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-rose-800 mb-2">3. Prever Futuros</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-md">Las Flores: Creatividad y visión a largo plazo.</p>
+                    
+                    <!-- Competences List -->
+                    <div class="space-y-4 w-full max-w-lg">
+                        <div class="bg-rose-50 p-4 rounded-xl border-r-4 border-rose-400 card-shadow group">
+                            <h4 class="font-bold text-rose-900 group-hover:text-rose-600 transition-colors"><i class="fas fa-binoculars mr-2"></i>Proyecciones de Futuro</h4>
+                            <p class="text-sm">Imaginar escenarios: lo probable vs. lo preferible.</p>
+                        </div>
+                        <div class="bg-rose-50 p-4 rounded-xl border-r-4 border-rose-400 card-shadow group">
+                            <h4 class="font-bold text-rose-900 group-hover:text-rose-600 transition-colors"><i class="fas fa-water mr-2"></i>Adaptabilidad</h4>
+                            <p class="text-sm">Ser flexible y gestionar la incertidumbre y el cambio.</p>
+                        </div>
+                        <div class="bg-rose-50 p-4 rounded-xl border-r-4 border-rose-400 card-shadow group">
+                            <h4 class="font-bold text-rose-900 group-hover:text-rose-600 transition-colors"><i class="fas fa-lightbulb mr-2"></i>Pensamiento Exploratorio</h4>
+                            <p class="text-sm">Creatividad interdisciplinar para nuevas ideas.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="hidden md:flex items-center justify-start opacity-20">
+                    <i class="fas fa-cannabis text-9xl text-rose-300 transform -rotate-12"></i>
+                </div>
+            </div>
+
+            <!-- AREA 4: ACCIÓN (Right) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                <div class="hidden md:flex items-center justify-end opacity-20">
+                     <i class="fas fa-paper-plane text-9xl text-yellow-300 transform rotate-12"></i>
+                </div>
+                <div class="flex flex-col items-start text-left">
+                    <div class="bg-yellow-100 text-yellow-800 p-4 rounded-full inline-block mb-4 shadow-lg">
+                        <i class="fas fa-fist-raised text-3xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-yellow-800 mb-2">4. Actuar</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-md">Las Abejas: Transformación individual y colectiva.</p>
+                    
+                    <!-- Competences List -->
+                    <div class="space-y-4 w-full max-w-lg">
+                        <div class="bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-400 card-shadow group">
+                            <h4 class="font-bold text-yellow-900 group-hover:text-yellow-600 transition-colors"><i class="fas fa-bullhorn mr-2"></i>Actuación Política</h4>
+                            <p class="text-sm">Exigir responsabilidad y políticas eficaces.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-400 card-shadow group">
+                            <h4 class="font-bold text-yellow-900 group-hover:text-yellow-600 transition-colors"><i class="fas fa-users mr-2"></i>Acción Colectiva</h4>
+                            <p class="text-sm">Colaborar: la fuerza del enjambre para el cambio real.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-400 card-shadow group">
+                            <h4 class="font-bold text-yellow-900 group-hover:text-yellow-600 transition-colors"><i class="fas fa-user-astronaut mr-2"></i>Iniciativa Individual</h4>
+                            <p class="text-sm">Identificar tu potencial propio y actuar en la comunidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-emerald-800 text-white p-8 text-center mt-8">
+            <h3 class="text-2xl hand-font font-bold mb-4">¿Estás listo para desarrollar tu GreenComp?</h3>
+            <div class="flex justify-center space-x-8 text-emerald-200 text-4xl mb-6">
+                <i class="fas fa-seedling animate-bounce" style="animation-delay: 0.1s"></i>
+                <i class="fas fa-tree animate-bounce" style="animation-delay: 0.2s"></i>
+                <i class="fas fa-globe-americas animate-bounce" style="animation-delay: 0.3s"></i>
+            </div>
+            <p class="text-sm opacity-70">Basado en el informe oficial JRC Science for Policy: GreenComp.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Simple interactive element to highlight sections on scroll could be added here
+        // For now, hover effects via CSS provide the dynamism requested.
+    </script>
+</body>
+</html>
